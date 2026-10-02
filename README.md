@@ -1,16 +1,15 @@
-# React + Vite
+# AquaChile - Proyecto de Automatización de Evaluaciones Psicolaborales
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositorio contiene el desarrollo del frontend (MVP) para la plataforma de automatización de evaluaciones psicolaborales de AquaChile, desarrollado para la asignatura DSY1104 - Desarrollo Fullstack II.
 
-Currently, two official plugins are available:
+## Integrantes del Equipo
+* **Paz** 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologías Utilizadas
+* **Frontend:** React + Vite
+* **Estilos:** CSS3 / HTML5
+* **Control de Versiones:** Git & GitHub
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Funcionalidades
+* **Formulario de Postulación:** Registro de postulantes y carga de antecedentes.
+* **Dashboard de Administración:** Panel para la gestión de candidatos y asignación de psicólogos según su estado.
