@@ -1,21 +1,27 @@
-import Formulario2 from "./components/Formulario/Formulario2"
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AppLayout from "./layouts/AppLayaout";
+import Formulario from "./pages/Formulario";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
+import DetallePostulante from "./pages/DetallePostulante";
 
 function App() {
   return (
-    <div style={{ padding: '20px', fontFamily: 'sans-serif' }}>
-      <header style={{ textAlign: 'center', marginBottom: '30px' }}>
-        <h1>Proyecto Automatización - AquaChile</h1>
-        <p>Sistema de Solicitud de Evaluación Psicolaboral</p>
-      </header>
+    <BrowserRouter>
+      <Routes>
+        {/* Login fuera del layout principal */}
+        <Route path="/login" element={<Login />} />
 
-      <main style={{ display: 'flex', justifyContent: 'center' }}>
-        <div style={{ width: '100%', maxWidth: '500px' }}>
-          <Formulario2 />
-        </div>
-      </main>
-    </div>
-  )
+        {/* Rutas con AppLayout */}
+        <Route element={<AppLayout />}>
+          <Route path="/" element={<Formulario />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/postulante/1042" element={<DetallePostulante />} />
+          <Route path="*" element={<h2>Página No Encontrada (404)</h2>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;

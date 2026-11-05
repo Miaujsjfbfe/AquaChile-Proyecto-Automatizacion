@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  # Servicio de Base de Datos MySQL
+  aquachile-db:
+    image: mysql:8.0
+    container_name: aquachile_mysql_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'aquachile_db'
+      MYSQL_ROOT_PASSWORD: 'root_password_segura'
+      MYSQL_USER: 'aquachile_user'
+      MYSQL_PASSWORD: 'user_password_segura'
+    ports:
+      - "3306:3306"
+    volumes:
+      # Este volumen garantiza la CONSISTENCIA y la persistencia de los datos en tu disco local
+      - mysql_data:/var/lib/mysql
+      # Opcional: Script SQL inicial para cargar los mocks al levantar el contenedor
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  mysql_data:
